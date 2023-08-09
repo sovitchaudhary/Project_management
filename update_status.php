@@ -74,6 +74,6 @@
 <?php
 	}
 	else{
-		header('Location: index.php');
+		header('Location: login.php');
 	}
 ?>

@@ -59,6 +59,6 @@
 <?php
 	}
 	else{
-		header('Location: admin_login.php');
+		header('Location: login.php');
 	}
 ?>
