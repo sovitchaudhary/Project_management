@@ -2,7 +2,7 @@
 	session_start();
 	include('../includes/db.php');
 	if(isset($_POST['adminLogin'])) {
-        $query= "SELECT `uid`, `username`, `email`, `password` FROM `admin` WHERE email = '$_POST[email]' AND password = '$_POST[password]'";
+        $query= "SELECT `id`, `username`, `email`, `password` FROM `admin` WHERE email = '$_POST[email]' AND password = '$_POST[password]'";
 		$query_run = mysqli_query($connection,$query);
 		if(mysqli_num_rows($query_run)){
 			while($row = mysqli_fetch_assoc($query_run)){
