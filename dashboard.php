@@ -1,9 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['email'])) {
-    include('includes/db.php');
-    
-    ?>
+	if (isset($_SESSION['email'])) {
+	    include('server/db.php');
+        ?>
     <!DOCTYPE html>
     <html>
 
@@ -11,7 +10,8 @@ if (isset($_SESSION['email'])) {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>User dashboard</title>
-        <script src="js/jquery.js"></script>
+      <!-- jQuery file -->
+		<script src="js/jquery.js"></script>
 		<!-- Bootstrap files -->
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<script src="js/bootstrap.min.js"></script>

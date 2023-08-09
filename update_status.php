@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if (isset($_SESSION['email'])) {
-	include('includes/connection.php'); 
+	include('includes/db.php'); 
 	if (isset($_POST['update'])) {
 		$query = "update tasks set status = '$_POST[status]' where tid = $_GET[id]";
 		$query_run = mysqli_query($connection,$query);
@@ -28,8 +28,8 @@
 
 	<script src="includes/jquery.js"></script>
 	<!-- Bootstrap files -->
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/bootstrap.min.js"></script>
 	<!-- External css file -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/new.css">

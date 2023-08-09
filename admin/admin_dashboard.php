@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if (isset($_SESSION['email'])) {
-	    include('../server/db.php');
+	    include('../includes/db.php');
 	    if (isset($_POST['create_task'])) {
 			 $query = "INSERT INTO `tasks`(`tid`, `uid`, `description`, `start_date`, `end_date`, `status`) VALUES (null,$_POST[id],'$_POST[description]','$_POST[start_date]','$_POST[end_date]','Not Started')";
 	     	$query_run = mysqli_query($connection,$query);
@@ -45,11 +45,6 @@
 			$(document).ready(function(){
 				$("#manage_task").click(function(){
 					$("#right_sidebar").load("manage_task.php");
-				});
-			});
-			$(document).ready(function(){
-				$("#view_leave").click(function(){
-					$("#right_sidebar").load("view_leave.php");
 				});
 			});
 		</script>

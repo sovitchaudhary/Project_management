@@ -1,5 +1,11 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+// Rest of your code...
+?>
+<?php
 	session_start();
+	
 	if (isset($_SESSION['email'])) {
 	include('includes/db.php');
  ?>
@@ -15,12 +21,12 @@
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<!-- External css file -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/new.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	
 </head>
 <body>
 	<center><h3>Yours Tasks</h3></center>
-	<table class="table" style="background-color: #808282;width: 68vw;">
+	<table class="table" style="background-color: black; width: 68vw;">
 		<tr>
 			<th>S.No</th>
 			<th>Task ID</th>
@@ -30,9 +36,9 @@
 			<th>Status</th>
 			<th>Action</th>
 		</tr>
-		<?php
-			$query = "select * from tasks where uid = $_SESSION[uid]"; 
-			$sno = 1;
+		 <?php
+		    $sno = 1;
+			$query = "select *from tasks";
 			$query_run = mysqli_query($connection,$query);
 			while($row = mysqli_fetch_assoc($query_run)){
 				?>
@@ -47,7 +53,7 @@
 				</tr>
 				<?php
 				$sno = $sno + 1;
-			}
+			} 	
 		 ?>
 	</table>
 
